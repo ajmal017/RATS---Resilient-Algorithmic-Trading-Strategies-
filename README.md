@@ -1,1 +1,1 @@
-# kramschu-RATS---Resilient-Algorithmic-Trading-Strategies-
+Resilient-Algorithmic-Trading-Strategies
