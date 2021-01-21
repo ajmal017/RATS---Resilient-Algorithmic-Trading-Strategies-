@@ -1,7 +1,7 @@
 Resilient-Algorithmic-Trading-Strategies
 1. Navigate to RATS_application/backend/
 
-2. In a Python environment, install Django:
+2. In a Python environment, install django:
     'pip install Django'
     
 3. Once in directory run 'python manage.py runserver'
