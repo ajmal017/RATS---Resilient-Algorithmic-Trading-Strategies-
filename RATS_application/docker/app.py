@@ -76,7 +76,6 @@ def run_algorithm():
    
 
     # Return the backtest results to the client
-    print(total_performance)
     return json.dumps(results)
 
 
