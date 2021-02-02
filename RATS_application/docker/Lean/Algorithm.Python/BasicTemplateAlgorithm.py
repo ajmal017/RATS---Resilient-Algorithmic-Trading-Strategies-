@@ -21,6 +21,8 @@ from QuantConnect import *
 from QuantConnect.Algorithm import *
 import numpy as np
 
+VAR_CASH=100000
+
 ### <summary>
 ### Basic template algorithm simply initializes the date range and cash. This is a skeleton
 ### framework you can use for designing an algorithm.
@@ -36,7 +38,7 @@ class BasicTemplateAlgorithm(QCAlgorithm):
 
         self.SetStartDate(2013,10, 7)  #Set Start Date
         self.SetEndDate(2013,10,11)    #Set End Date
-        self.SetCash(100000)           #Set Strategy Cash
+        self.SetCash(VAR_CASH)           #Set Strategy Cash
         # Find more symbols here: http://quantconnect.com/data
         self.AddEquity("SPY", Resolution.Minute)
         self.Debug("numpy test >>> print numpy.pi: " + str(np.pi))

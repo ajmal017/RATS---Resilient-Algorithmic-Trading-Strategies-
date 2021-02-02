@@ -24,6 +24,8 @@ from QuantConnect.Algorithm import *
 from QuantConnect.Indicators import *
 import numpy as np
 
+VAR_CASH=100000
+
 ### <summary>
 ### Demonstration of requesting daily resolution data for US Equities.
 ### This is a simple regression test algorithm using a skeleton algorithm and requesting daily data.
@@ -37,7 +39,7 @@ class BasicTemplateDailyAlgorithm(QCAlgorithm):
 
         self.SetStartDate(2013,10,8)   #Set Start Date
         self.SetEndDate(2013,10,17)    #Set End Date
-        self.SetCash(100000)           #Set Strategy Cash
+        self.SetCash(VAR_CASH)           #Set Strategy Cash
         # Find more symbols here: http://quantconnect.com/data
         self.AddEquity("SPY", Resolution.Daily)
 
