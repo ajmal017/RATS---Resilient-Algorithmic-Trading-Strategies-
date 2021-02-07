@@ -28,7 +28,7 @@ SECRET_KEY = 'y9)j7ftq*#70$teyq194*!zg%ta%^uet4*(5(s=t&1@3z8uhsa'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['http://127.0.0.1:8000', 'http://127.0.0.1:8083', 'localhost', '127.0.0.1']
 
 # Load the configuration files. This gives the django project flexibility so
 # that it can run in other environments (local, remote) seamlessly, with all
@@ -54,16 +54,17 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'corsheaders',
+
 
     # Apps
     'apps.home',
     'apps.quant_connect',
 ]
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -124,7 +125,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-
-SESSION_COOKIE_SECURE = False
-CSRF_COOKIE_SECURE = False
-SECURE_SSL_REDIRECT = False
+CORS_ORIGIN_ALLOW_ALL = True
+# SESSION_COOKIE_SECURE = False
+# CSRF_COOKIE_SECURE = False
+# SECURE_SSL_REDIRECT = False

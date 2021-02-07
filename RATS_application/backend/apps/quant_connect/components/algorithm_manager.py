@@ -1,6 +1,5 @@
 import subprocess
 import os
-from utils import utils
 from django.apps import apps
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse

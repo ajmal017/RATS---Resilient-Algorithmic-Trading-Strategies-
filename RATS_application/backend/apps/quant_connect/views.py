@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from rest_framework.decorators import api_view
 from django.http import HttpResponse
+from rest_framework.decorators import api_view
 from .components.tests import Test
 from django.views.decorators.csrf import csrf_exempt
 from .components.algorithm_manager import AlgorithmManager
