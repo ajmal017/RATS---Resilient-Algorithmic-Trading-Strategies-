@@ -11,4 +11,5 @@ urlpatterns = [
     url(r'algorithm_manager/get_past_runs',
         views.get_past_runs,
         name="algorithm-manager-get-past-runs"),
+    path('getdb', views.getdb, name='getdb')
 ]
