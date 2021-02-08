@@ -28,7 +28,7 @@ SECRET_KEY = 'y9)j7ftq*#70$teyq194*!zg%ta%^uet4*(5(s=t&1@3z8uhsa'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['http://127.0.0.1:8000', 'http://127.0.0.1:8083', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['http://127.0.0.1:8000', 'http://127.0.0.1:8083', 'localhost', '127.0.0.1', 'tealinux.com']
 
 # Load the configuration files. This gives the django project flexibility so
 # that it can run in other environments (local, remote) seamlessly, with all
