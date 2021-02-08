@@ -78,7 +78,7 @@ namespace QuantConnect.Tests
             {
                 {"TrainingInitializeRegressionAlgorithm", AlgorithmStatus.RuntimeError},
                 {"OnOrderEventExceptionRegression", AlgorithmStatus.RuntimeError},
-                {"WarmUpAfterInitializeRegression", AlgorithmStatus.RuntimeError }
+                {"WarmUpAfterIntializeRegression", AlgorithmStatus.RuntimeError }
             };
 
             // find all regression algorithms in Algorithm.CSharp

@@ -14,9 +14,8 @@
  *
 */
 
-using Newtonsoft.Json;
 using System.Collections.Generic;
-using QuantConnect.Notifications;
+using Newtonsoft.Json;
 
 namespace QuantConnect.Packets
 {
@@ -60,18 +59,6 @@ namespace QuantConnect.Packets
         /// </summary>
         [JsonProperty(PropertyName = "DisableAcknowledgement")]
         public bool DisableAcknowledgement;
-
-        /// <summary>
-        /// A list of event types to generate notifications for, which will use <see cref="NotificationTargets"/>
-        /// </summary>
-        [JsonProperty(PropertyName = "aNotificationEvents")]
-        public HashSet<string> NotificationEvents;
-
-        /// <summary>
-        /// A list of notification targets to use
-        /// </summary>
-        [JsonProperty(PropertyName = "aNotificationTargets")]
-        public List<Notification> NotificationTargets;
 
         /// <summary>
         /// Default constructor for JSON of the Live Task Packet

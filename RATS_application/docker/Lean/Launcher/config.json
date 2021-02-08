@@ -9,24 +9,35 @@
   "environment": "backtesting", // "live-paper", "backtesting", "live-interactive", "live-interactive-iqfeed"
 
   // algorithm class selector
-  "algorithm-type-name": "BasicTemplateFrameworkAlgorithm",
+  "algorithm-type-name": "BasicTemplateDailyAlgorithm",
 
   // Algorithm language selector - options CSharp, Python
-  "algorithm-language": "CSharp",
+  //"algorithm-language": "CSharp",
+  "algorithm-language": "Python",
 
   //Physical DLL location
-  "algorithm-location": "QuantConnect.Algorithm.CSharp.dll",
-  //"algorithm-location": "../../../Algorithm.Python/BasicTemplateFrameworkAlgorithm.py",
+  //"algorithm-location": "QuantConnect.Algorithm.CSharp.dll",
+  "algorithm-location": "/Lean/Algorithm.Python/BasicTemplateDailyAlgorithm.py",
 
   //Research notebook
   //"composer-dll-directory": ".",
 
-  // engine
-  "data-folder": "../../../Data/",
 
+  //Algorithm Manager Load Time Maximum - Added by Tommy
+  //"algorithm-manager-time-loop-maximum": "100",
+
+  //Data Directory - Added by Tommy
+  "data-directory": "/Lean/Data/",
+
+  // engine
+  "data-folder": "/Lean/Data/",
+
+  //results destination folder - Added by Tommy
+  "results-destination-folder": "/Lean/Results/",
+  
   // debugging configuration - options for debugging-method LocalCmdLine, VisualStudio, PTVSD, PyCharm
   "debugging": false,
-  "debugging-method": "LocalCmdline",
+  "debugging-method": "PTVSD",
 
   // handlers
   "log-handler": "QuantConnect.Logging.CompositeLogHandler",
@@ -175,7 +186,6 @@
 
       // the paper brokerage requires the BacktestingTransactionHandler
       "live-mode-brokerage": "PaperBrokerage",
-
       "setup-handler": "QuantConnect.Lean.Engine.Setup.BrokerageSetupHandler",
       "result-handler": "QuantConnect.Lean.Engine.Results.LiveTradingResultHandler",
       "data-feed-handler": "QuantConnect.Lean.Engine.DataFeeds.LiveTradingDataFeed",

@@ -84,8 +84,7 @@
                 "DATA_DIR=${workspaceFolder}/Data",
                 "RESULTS_DIR=${workspaceFolder}/Results",
                 "DEBUGGING=Y",
-                "PYTHON_DIR=${workspaceFolder}/Algorithm.Python",
-                "EXIT=Y"
+                "PYTHON_DIR=${workspaceFolder}/Algorithm.Python"
             ],
             "problemMatcher": [
                 {

@@ -27,6 +27,7 @@ RUN nuget restore /Lean/QuantConnect.Lean.sln
 RUN msbuild /Lean/QuantConnect.Lean.sln
 
 COPY ./app.py /Lean/Launcher/bin/Debug/
+RUN cp /Lean/Launcher/config.json /Lean/Launcher/bin/Debug/
 
 # Can override with '-w'
 WORKDIR /Lean/Launcher/bin/Debug/
