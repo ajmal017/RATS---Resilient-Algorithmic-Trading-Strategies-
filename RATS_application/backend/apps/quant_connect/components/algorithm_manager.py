@@ -27,3 +27,8 @@ class AlgorithmManager:
         with open(settings.RATS_BACKEND_DIR + "/quant_connect/results/" + request.data['algorithm'] + '_' + str(datetime.now().strftime("%Y%m%d%H%M%S")) + '.json', 'w') as f:
             json.dump(algorithm_results, f, indent=4)
         return JsonResponse(algorithm_results)
+
+    def get_past_runs(self, request):
+        files_dir = settings.RATS_BACKEND_DIR + "/quant_connect/results/"
+        past_runs = os.listdir(files_dir)
+        return JsonResponse({'past_runs': past_runs})

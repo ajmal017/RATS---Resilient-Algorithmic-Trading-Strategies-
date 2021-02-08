@@ -8,4 +8,7 @@ urlpatterns = [
     url(r'algorithm_manager/set_algorithm',
         views.set_algorithm,
         name="algorithm-manager-set-algorithm"),
+    url(r'algorithm_manager/get_past_runs',
+        views.get_past_runs,
+        name="algorithm-manager-get-past-runs"),
 ]
