@@ -62,6 +62,43 @@ def run_algorithm():
     os.system(cash_command)
     print('Finished setting cash values in python files')
 
+    # Set the values for the starting date
+    print('Setting start date in the python file')
+    startlist = params.get('startdate')
+    start_year = f'sed -i \'s|^START_YEAR.*|START_YEAR={startlist[0]}|\' /Lean/Algorithm.Python/{algo}.py'
+    os.system(start_year)
+    start_month = f'sed -i \'s|^START_MONTH.*|START_MONTH={startlist[1]}|\' /Lean/Algorithm.Python/{algo}.py'
+    os.system(start_month)
+    start_day = f'sed -i \'s|^START_DAY.*|START_DAY={startlist[2]}|\' /Lean/Algorithm.Python/{algo}.py'
+    os.system(start_day)
+    print('Finished setting up start date in python files')
+
+    # Set the values for the end date
+    print('Setting end date in the python file')
+    endlist = params.get('enddate')
+    end_year = f'sed -i \'s|^END_YEAR.*|END_YEAR={endlist[0]}|\' /Lean/Algorithm.Python/{algo}.py'
+    os.system(end_year)
+    end_month = f'sed -i \'s|^END_MONTH.*|END_MONTH={endlist[1]}|\' /Lean/Algorithm.Python/{algo}.py'
+    os.system(end_month)
+    end_day = f'sed -i \'s|^END_DAY.*|END_DAY={endlist[2]}|\' /Lean/Algorithm.Python/{algo}.py'
+    os.system(end_day)
+    print('Finished setting up ending dates in python files')
+
+    # Set the value for the buy tolerance
+    print('Setting buy tolerance in Python files')
+    buy_tol = params.get('buytol')
+    buy_tol_command = f'sed -i \'s|^BUY_TOL.*|BUY_TOL={buy_tol}|\' /Lean/Algorithm.Python/{algo}.py'
+    os.system(buy_tol_command)
+    print('Finished setting buy tolerance in python files')
+
+    # Set the value for the sell tolerance
+    print('Setting sell tolerance in Python files')
+    sell_tol = params.get('selltol')
+    sell_tol_command = f'sed -i \'s|^SELL_TOL.*|SELL_TOL={sell_tol}|\' /Lean/Algorithm.Python/{algo}.py'
+    os.system(sell_tol_command)
+    print('Finished setting sell tolerance in python files')
+
+
     # Initiate the backtest run
     print('Launching lean backtest')
     lean_command='echo -e "\n" | mono QuantConnect.Lean.Launcher.exe >/dev/null 2>&1'
