@@ -7,6 +7,7 @@ from django.http import JsonResponse
 from flask import request
 from django.conf import settings
 from datetime import date, datetime
+from ..models import *
 import requests
 import json
 
@@ -26,6 +27,13 @@ class AlgorithmManager:
         algorithm_results = json.loads(self._run_algorithm(params))
         with open(settings.RATS_BACKEND_DIR + "/quant_connect/results/" + request.data['algorithm'] + '_' + str(datetime.now().strftime("%Y%m%d%H%M%S")) + '.json', 'w') as f:
             json.dump(algorithm_results, f, indent=4)
+        backtest = Backtest(algname=params["algorithm"], cash=params["cash"], buytol=params["buytol"],
+                            selltol=params["selltol"],
+                            startdate=datetime(params["startdate"][0], params["startdate"][1], params["startdate"][2]).strftime("%Y%m%d"),
+                            enddate=datetime(params["enddate"][0], params["enddate"][1], params["enddate"][2]).strftime("%Y%m%d"),
+                            userid=User.objects.get(pk=1),
+                            filepath="example")
+        backtest.save()
         return JsonResponse(algorithm_results)
 
     def get_past_runs(self, request):
