@@ -96,14 +96,13 @@ WSGI_APPLICATION = 'apps.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'pypzvcnj',
-        'USER': 'pypzvcnj',
-        'PASSWORD': 'ZS6ARC0YW4kbl2E_DsTSRpJ8nblSgZwl',
-        'HOST': 'ziggy.db.elephantsql.com',
-        'PORT': '5432'
-
-    }
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': CONFIG['database']['name'],
+        'USER': CONFIG['database']['user'],
+        'PASSWORD': CONFIG['database']['password'],
+        'HOST': CONFIG['database']['host'],
+        'PORT': CONFIG['database']['port']
+    },
 }
 
 

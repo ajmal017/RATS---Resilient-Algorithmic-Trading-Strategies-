@@ -25,15 +25,19 @@ class AlgorithmManager:
         params = request.data
         print(params)
         algorithm_results = json.loads(self._run_algorithm(params))
-        with open(settings.RATS_BACKEND_DIR + "/quant_connect/results/" + request.data['algorithm'] + '_' + str(datetime.now().strftime("%Y%m%d%H%M%S")) + '.json', 'w') as f:
+        filepath = settings.RATS_BACKEND_DIR + "/quant_connect/results/" + request.data['algorithm'] + '_' + str(datetime.now().strftime("%Y%m%d%H%M%S")) + '.json'
+        with open(filepath, 'w') as f:
             json.dump(algorithm_results, f, indent=4)
-        backtest = Backtest(algname=params["algorithm"], cash=params["cash"], buytol=params["buytol"],
-                            selltol=params["selltol"],
-                            startdate=datetime(params["startdate"][0], params["startdate"][1], params["startdate"][2]).strftime("%Y%m%d"),
-                            enddate=datetime(params["enddate"][0], params["enddate"][1], params["enddate"][2]).strftime("%Y%m%d"),
-                            userid=User.objects.get(pk=1),
-                            filepath="example")
-        backtest.save()
+        # backtest = Backtest(algname=params["algorithm"],
+        #                     cash=params["cash"],
+        #                     buytol=params["buytol"] ,
+        #                     selltol=params["selltol"],
+        #                     startdate=datetime(params["startdate"][0], params["startdate"][1], params["startdate"][2]).strftime("%Y%m%d"),
+        #                     enddate=datetime(params["enddate"][0], params["enddate"][1], params["enddate"][2]).strftime("%Y%m%d"),
+        #                     userid=User.objects.get(pk=1),
+        #                     filepath=filepath
+        #                     )
+        # backtest.save()
         return JsonResponse(algorithm_results)
 
     def get_past_runs(self, request):

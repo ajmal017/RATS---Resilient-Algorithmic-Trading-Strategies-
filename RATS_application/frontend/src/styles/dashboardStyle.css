@@ -27,6 +27,21 @@ ul#file-name {
   font-weight: 400;
 }
 
+.results-text {
+  overflow-y: scroll;
+  word-wrap: break-word;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 95%;
+  left: 3%;
+  height: 90%;
+  top: 7%;
+  position: absolute;
+  line-height: 130%;
+  font-weight: 400;
+}
+
 li.file-list {
   margin-bottom: 4%;
 }
@@ -61,6 +76,18 @@ form {
   display: inline-block;
 }
 
+.alg-results-header {
+  background-color: #50B0A2;
+  color: white;
+  font-weight: 300;
+  padding: 0.75%;
+  width: 15%;
+  border-bottom: 1px solid #000;
+  border-right: 1px solid #000;
+  border-radius: 0px 0px 5px 0px;
+  display: inline-block;
+}
+
 select {
   margin-bottom: 1.5%;
   font-weight: 300;
@@ -80,7 +107,7 @@ label {
 }
 
 #submit-alg {
-  left: 15%;
+  left: 0%;
   margin-top: 2%;
   position: absolute;
 }
@@ -90,7 +117,7 @@ label {
   border-bottom: 3px solid #000;
   border-right: 3px solid #000;
   width: 25%;
-  height: 40%;
+  height: 50%;
   position: absolute;
 }
 
@@ -99,6 +126,19 @@ label {
   border-right: 3px solid #000;
   width: 25%;
   position: absolute;
-  height: 60%;
-  top: 40%;
+  height: 50%;
+  top: 50%;
+}
+
+.algorithm-results-content {
+  background: rgb(219, 240, 226);
+  border-right: 3px solid #000;
+  width: 75%;
+  position: absolute;
+  height: 100%;
+  left: 25%;
+}
+
+#alg-name {
+  width: 80%;
 }
