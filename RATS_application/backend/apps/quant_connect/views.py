@@ -17,3 +17,8 @@ def get_tests(request):
 @api_view(['POST'])
 def set_algorithm(request):
     return AlgorithmManager().set_algorithm(request)
+
+
+@api_view(['GET'])
+def get_past_runs(request):
+    return AlgorithmManager().get_past_runs(request)
